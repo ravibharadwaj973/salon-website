@@ -111,7 +111,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
-              Salon Grow runs the front desk of a salon — or a chain of them. Appointments, billing with proper GST
+              Parlon runs the front desk of a salon — or a chain of them. Appointments, billing with proper GST
               invoices, memberships, staff commission, and the WhatsApp that turns a one-time visit into a regular.
             </p>
 
@@ -237,12 +237,12 @@ export default function HomePage() {
             Your customers never see any of this.
           </h2>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-muted">
-            Glow Studio is a salon running on Salon Grow. Their website is their own — their brand, their words — and the
+            Aster Hair & Skin is a salon running on Parlon. Their website is their own — their brand, their words — and the
             booking form on it writes straight into their diary. The moment someone books, it is on the screen at their
             front desk, and the customer has a confirmation.
           </p>
           <a href="http://localhost:3003" className="btn-ghost mt-7 h-11">
-            Visit the Glow Studio site
+            Visit the Aster site
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>

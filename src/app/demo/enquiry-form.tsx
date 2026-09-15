@@ -101,7 +101,7 @@ export function EnquiryForm() {
             required
             value={form.salonName}
             onChange={(event) => set('salonName', event.target.value)}
-            placeholder="Glow Studio"
+            placeholder="Your salon's name"
             className={inputClass}
           />
         </Field>
@@ -145,7 +145,7 @@ export function EnquiryForm() {
               autoComplete="email"
               value={form.email}
               onChange={(event) => set('email', event.target.value)}
-              placeholder="priya@glowstudio.in"
+              placeholder="you@yoursalon.in"
               className={inputClass}
             />
           </Field>

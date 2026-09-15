@@ -6,10 +6,10 @@
  * NEXT_PUBLIC_API_URL to wherever the backend is; it falls back to the local
  * port the backend dev server uses.
  */
-export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api/v1';
+export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'https://api.jharavi.in/api/v1';
 
 /** Where a new trial account signs in afterwards. */
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
+export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://salon-frontend-dusky.vercel.app';
 
 export class ApiError extends Error {
   constructor(

@@ -1,11 +1,36 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import './globals.css';
+import { ParlonLogo } from '@/components/brand/parlon-logo';
+
+const DESCRIPTION =
+  'The diary, the till and the customer book for a salon — with the messaging that brings people back. Built for Indian salons, GST invoices included.';
 
 export const metadata: Metadata = {
-  title: { default: 'Salon Grow — software for Indian salon chains', template: '%s · Salon Grow' },
-  description:
-    'The diary, the till and the customer book for a salon — with the messaging that brings people back. Built for Indian salons, GST invoices included.',
+  title: { default: 'Parlon — software for Indian salon chains', template: '%s · Parlon' },
+  description: DESCRIPTION,
+  applicationName: 'Parlon',
+  // The mark and the card image come from the files beside this one —
+  // icon.svg, apple-icon.png, opengraph-image.png, twitter-image.png — so a
+  // link pasted into WhatsApp or Slack unfurls with the logo on it.
+  openGraph: {
+    type: 'website',
+    siteName: 'Parlon',
+    title: 'Parlon — software for Indian salon chains',
+    description: DESCRIPTION,
+    locale: 'en_IN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Parlon — software for Indian salon chains',
+    description: DESCRIPTION,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#EA580C',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -15,10 +40,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-40 border-b border-stone-200/70 bg-canvas/70 backdrop-blur-md">
           <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-5">
             <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-700 text-sm font-bold text-white shadow-[0_4px_12px_-4px_rgba(234,88,12,0.8)]">
-                S
-              </span>
-              <span className="text-base font-semibold tracking-tight">Salon Grow</span>
+              <ParlonLogo className="h-8 w-8 shadow-[0_4px_12px_-4px_rgba(234,88,12,0.8)] rounded-xl" />
+              <span className="text-base font-semibold tracking-tight">Parlon</span>
             </Link>
 
             <nav className="ml-auto hidden items-center gap-6 text-sm text-ink-muted sm:flex">
@@ -41,17 +64,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="mt-24 border-t border-stone-200 bg-white">
           <div className="mx-auto max-w-6xl px-5 py-12 text-sm text-ink-muted">
             <p className="flex items-center gap-2.5 font-medium text-ink">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-brand-700 text-xs font-bold text-white">
-                S
-              </span>
-              Salon Grow
+              <ParlonLogo className="h-7 w-7" />
+              Parlon
             </p>
             <p className="mt-1 max-w-xl leading-relaxed">
               Made for Indian salons and spas. GST invoices, WhatsApp that actually reaches people, and payments
               recorded the way they really happen — by hand, at the counter.
             </p>
             <p className="mt-4 text-xs text-ink-subtle">
-              © {new Date().getFullYear()} Salon Grow. No payment gateway, no card details, ever.
+              © {new Date().getFullYear()} Parlon. No payment gateway, no card details, ever.
             </p>
           </div>
         </footer>
