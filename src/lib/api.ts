@@ -9,7 +9,12 @@
 export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'https://api.jharavi.in/api/v1';
 
 /** Where a new trial account signs in afterwards. */
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://salon-frontend-dusky.vercel.app';
+/**
+ * The salon app. Was a Vercel preview URL left over from before the domain
+ * existed — every "Sign in" and "Start free" link on the marketing site
+ * pointed at a deployment nobody maintains.
+ */
+export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://parlon.jharavi.in';
 
 export class ApiError extends Error {
   constructor(

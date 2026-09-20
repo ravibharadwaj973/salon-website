@@ -241,10 +241,21 @@ export default function HomePage() {
             booking form on it writes straight into their diary. The moment someone books, it is on the screen at their
             front desk, and the customer has a confirmation.
           </p>
-          <a href="http://localhost:3003" className="btn-ghost mt-7 h-11">
-            Visit the Aster site
-            <ArrowRight className="h-4 w-4" />
-          </a>
+          {/* The example salon's own site. It has no production domain yet, so
+              the link is shown only when one is configured — a dead
+              "Visit the Aster site" on the marketing page is worse than no
+              link at all. Set NEXT_PUBLIC_DEMO_SITE_URL to bring it back. */}
+          {process.env.NEXT_PUBLIC_DEMO_SITE_URL ? (
+            <a
+              href={process.env.NEXT_PUBLIC_DEMO_SITE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ghost mt-7 h-11"
+            >
+              Visit the Aster site
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          ) : null}
         </div>
       </section>
     </main>
