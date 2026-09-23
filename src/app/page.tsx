@@ -240,13 +240,13 @@ export default function HomePage() {
             Your customers never see any of this.
           </h2>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-muted">
-            Aster Hair & Skin is a salon running on Parlon. Their website is their own — their brand, their words — and the
+            Glow Studio is a salon running on Parlon. Their website is their own — their brand, their words — and the
             booking form on it writes straight into their diary. The moment someone books, it is on the screen at their
             front desk, and the customer has a confirmation.
           </p>
           {/* The example salon's own site. It has no production domain yet, so
               the link is shown only when one is configured — a dead
-              "Visit the Aster site" on the marketing page is worse than no
+              "Visit the Glow Studio site" on the marketing page is worse than no
               link at all. Set NEXT_PUBLIC_DEMO_SITE_URL to bring it back. */}
           {process.env.NEXT_PUBLIC_DEMO_SITE_URL ? (
             <a
@@ -255,7 +255,7 @@ export default function HomePage() {
               rel="noreferrer"
               className="btn-ghost mt-7 h-11"
             >
-              Visit the Aster site
+              Visit the Glow Studio site
               <ArrowRight className="h-4 w-4" />
             </a>
           ) : null}
