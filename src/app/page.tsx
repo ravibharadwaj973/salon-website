@@ -14,6 +14,7 @@ import {
   Wallet,
 } from 'lucide-react';
 import { AppPreview } from '@/components/app-preview';
+import { Reviews } from '@/components/reviews';
 
 /**
  * The product page.
@@ -189,6 +190,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <Reviews />
 
       {/* ------------------------------------------------------ how it works */}
       <section id="how-it-works" className="relative overflow-hidden border-t border-stone-200 bg-white">
