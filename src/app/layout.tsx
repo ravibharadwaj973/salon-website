@@ -2,6 +2,20 @@ import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import { ParlonLogo } from '@/components/brand/parlon-logo';
+import { type NavLink, SiteNav } from '@/components/site-nav';
+
+/**
+ * THE NAVIGATION, ONCE.
+ *
+ * Read by the row below and by the phone menu beside it. Kept in one place
+ * because two lists of the same links drift, and the one that goes stale is
+ * always the mobile one.
+ */
+const NAV: NavLink[] = [
+  { href: '/#what-it-does', label: 'What it does' },
+  { href: '/#how-it-works', label: 'How it works' },
+  { href: '/pricing', label: 'Pricing' },
+];
 
 const DESCRIPTION =
   'The diary, the till and the customer book for a salon — with the messaging that brings people back. Built for Indian salons, GST invoices included.';
@@ -37,25 +51,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <header className="sticky top-0 z-40 border-b border-stone-200/70 bg-canvas/70 backdrop-blur-md">
-          <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-5">
+        {/* `relative` so the phone menu can hang off the bottom of this header
+            whatever height it ends up being — see components/site-nav.tsx. */}
+        <header className="sticky top-0 z-40 border-b border-stone-200/70 bg-canvas/70 backdrop-blur-md relative">
+          <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-5 sm:gap-6">
             <Link href="/" className="flex items-center gap-2.5">
               <ParlonLogo className="h-8 w-8 shadow-[0_4px_12px_-4px_rgba(234,88,12,0.8)] rounded-xl" />
               <span className="text-base font-semibold tracking-tight">Parlon</span>
             </Link>
 
             <nav className="ml-auto hidden items-center gap-6 text-sm text-ink-muted sm:flex">
-              <Link href="/#what-it-does" className="hover:text-ink">What it does</Link>
-              <Link href="/#how-it-works" className="hover:text-ink">How it works</Link>
-              <Link href="/pricing" className="hover:text-ink">Pricing</Link>
+              {NAV.map((link) => (
+                <Link key={link.href} href={link.href} className="hover:text-ink">
+                  {link.label}
+                </Link>
+              ))}
             </nav>
 
-            <Link
-              href="/demo"
-              className="btn-primary ml-auto h-9 px-5 sm:ml-0"
-            >
-              Book a demo
-            </Link>
+            {/* The call to action stays in the header at every width — it is what
+                somebody on a phone is most likely to want, and burying it behind
+                a menu button costs more than the space it takes. */}
+            <div className="ml-auto flex items-center gap-1 sm:ml-0">
+              <Link href="/demo" className="btn-primary h-9 px-4 sm:px-5">
+                Book a demo
+              </Link>
+              <SiteNav links={NAV} />
+            </div>
           </div>
         </header>
 
