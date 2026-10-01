@@ -92,6 +92,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Made for Indian salons and spas. GST invoices, WhatsApp that actually reaches people, and payments
               recorded the way they really happen — by hand, at the counter.
             </p>
+            {/* Linked from the footer of every page, which is where a reviewer
+                and a cautious salon owner both look for them — and where
+                Google's OAuth review expects to find a privacy policy. */}
+            <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-ink-subtle">
+              <Link href="/privacy" className="hover:text-ink">
+                Privacy
+              </Link>
+              <Link href="/terms" className="hover:text-ink">
+                Terms
+              </Link>
+            </p>
+
             <p className="mt-4 text-xs text-ink-subtle">
               © {new Date().getFullYear()} Parlon. No payment gateway, no card details, ever.
             </p>
